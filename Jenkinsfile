@@ -5,11 +5,11 @@ timestamps {
 node () {
 
 	stage ('App-IC - Checkout') {
- 	 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git-login', url: 'https://github.com/patrice-khoury/jenkins-sample-1.git']]]) 
+ 		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git-login', url: 'https://github.com/patrice-khoury/jenkins-sample-1.git']]]) 
 	}
 	stage ('App-IC - Build') {
  			// Maven build step
-	withMaven(maven: 'maven') { 
+		withMaven(maven: 'maven') { 
  			if(isUnix()) {
  				sh "mvn clean package" 
 			} else { 
@@ -20,11 +20,22 @@ node () {
 	
 	stage ('App-IC - Quality Analysis') {
  			// Maven build step
-	withMaven(maven: 'maven') { 
+		withMaven(maven: 'maven') { 
  			if(isUnix()) {
  				sh "mvn sonar:sonar" 
 			} else { 
  				bat "mvn sonar:sonar" 
+			} 
+ 		} 
+	}
+	
+	stage ('App-IC - Deploy') {
+ 			// Maven build step
+		withMaven(maven: 'maven') { 
+ 			if(isUnix()) {
+ 				sh "mvn deploy" 
+			} else { 
+ 				bat "mvn deploy" 
 			} 
  		} 
 	}
@@ -36,7 +47,7 @@ It may not necessarily work/behave in the same way as post-build actions work.
 A logic review is suggested.
 */
 		// Mailer notification
-		step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'patrice.khoury@gmail.com', sendToIndividuals: false])
+	step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'patrice.khoury@gmail.com', sendToIndividuals: false])
  
 	}
 }
