@@ -1,11 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>fr.orsys.samples</groupId>
 	<artifactId>SampleProject</artifactId>
 	<packaging>jar</packaging>
-	<version>1.1.1-SNAPSHOT</version>
+	<version>1.1.2-SNAPSHOT</version>
 	<name>SampleProject</name>
 	<url>http://maven.apache.org</url>
 
@@ -13,6 +11,7 @@
 		<connection>scm:git:https://github.com/patrice-khoury/jenkins-sample-1.git</connection>
 		<url>https://github.com/patrice-khoury/jenkins-sample-1</url>
 		<developerConnection>scm:git:https://github.com/patrice-khoury/jenkins-sample-1.git</developerConnection>
+<tag>HEAD</tag>
 	</scm>
 
 	<dependencies>
