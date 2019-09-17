@@ -36,7 +36,7 @@ public class AppTest
         assertTrue( true );
     }
     
-    public void realTest() {
+    public void testGenerateNumber() {
     	final App app = new App();
     	final int result = app.generateNumber(2);
     	
