@@ -35,4 +35,11 @@ public class AppTest
     {
         assertTrue( true );
     }
+    
+    public void realTest() {
+    	final App app = new App();
+    	final int result = app.generateNumber(2);
+    	
+    	assertEquals(4, result);
+    }
 }

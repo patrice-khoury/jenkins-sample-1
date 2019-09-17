@@ -10,4 +10,8 @@ public class App
     {
         System.out.println( "Hello World!" );
     }
+    
+    public int generateNumber(final int param) {
+    	return param * 2;
+    }
 }
